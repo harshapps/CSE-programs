@@ -1,0 +1,9 @@
+#include <iostream>#include<cstdlib>using namespace std;
+int main(){int num,t,j,c,k,ti=0;cin>>t;if(t>=1  && t<=10){   while(ti<t)   {   // cout<<"Enter the number";cin>>num;int rem,sto=num,x[120],i=0;while(sto>0){
+    rem=sto%10;    x[i]=rem;
+    i++;    sto=sto/10;} int counts=i-1;if(!(counts>=1 )&& (counts<=100000))exit(1);int store[i],storefreq[i];for(j=0;j<i;j++)        {c=1;int remember;
+           for(k=j+1;k<i;k++)          {   if(x[j]==x[k])
+               {c++;i--;remember=k;                  while(remember<i)
+                   { x[remember]=x[remember+1];  //replaces the previous element with next element                       remember++;
+                   }
+                   k--;               }           }           store[j]=x[j];           storefreq[j]=c;       }
